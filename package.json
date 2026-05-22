@@ -1,0 +1,10 @@
+{
+  "name": "doggle",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "cd client && npm run dev",
+    "build": "cd client && npm run build",
+    "install:all": "cd client && npm install"
+  }
+}

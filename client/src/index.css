@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { color-scheme: dark; }
+
+  body {
+    background-color: #020D1A;
+    color: #EFF6FF;
+    font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(14,165,233,0.3); border-radius: 3px; }
+}
+
+@layer components {
+  .glass-card {
+    background: rgba(6,21,37,0.85);
+    border: 1px solid rgba(147,210,255,0.07);
+    backdrop-filter: blur(12px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.5);
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #0EA5E9 0%, #2563EB 100%);
+    color: #fff;
+    font-weight: 800;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 20px rgba(14,165,233,0.35);
+    transition: all 0.2s;
+  }
+  .btn-primary:hover {
+    box-shadow: 0 0 32px rgba(14,165,233,0.55);
+    transform: translateY(-1px);
+  }
+  .btn-primary:active { transform: scale(0.97); }
+
+  .btn-ghost {
+    background: rgba(147,210,255,0.05);
+    border: 1px solid rgba(147,210,255,0.12);
+    color: #EFF6FF;
+    font-weight: 700;
+    border-radius: 0.75rem;
+    transition: all 0.2s;
+  }
+  .btn-ghost:hover { background: rgba(147,210,255,0.1); }
+}
+
+@layer utilities {
+  .text-gradient-primary {
+    background: linear-gradient(135deg, #38BDF8 0%, #0EA5E9 50%, #2563EB 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .border-glow-primary {
+    border-color: #0EA5E9;
+    box-shadow: 0 0 0 1px rgba(14,165,233,0.3), 0 0 20px rgba(14,165,233,0.2);
+  }
+  .border-glow-secondary {
+    border-color: #10B981;
+    box-shadow: 0 0 0 1px rgba(16,185,129,0.3), 0 0 20px rgba(16,185,129,0.2);
+  }
+}
+
+@keyframes dots {
+  0%  { content: ''; }
+  25% { content: '.'; }
+  50% { content: '..'; }
+  75% { content: '...'; }
+}
+.animate-dots::after {
+  content: '';
+  animation: dots 1.4s steps(4, end) infinite;
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+.spin-slow { animation: spin-slow 2s linear infinite; }
