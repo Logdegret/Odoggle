@@ -21,7 +21,7 @@ export default function Nav() {
         {/* Logo */}
         <div className="flex items-center gap-2 flex-shrink-0">
           <span className="text-base font-black tracking-tight">
-            <span className="text-ink">Dog</span><span className="text-gradient-primary">gle</span>
+            <span className="text-ink">O</span><span className="text-gradient-primary">doggle</span>
           </span>
         </div>
 

@@ -27,7 +27,7 @@ export default function PremiumModal({ onClose }) {
         {/* Header */}
         <div className="text-center">
           <div className="text-3xl mb-1">👑</div>
-          <h2 className="text-2xl font-black text-gradient-primary">Doggle Premium</h2>
+          <h2 className="text-2xl font-black text-gradient-primary">Odoggle Premium</h2>
           <p className="text-ink-muted text-sm mt-1">Elevate your dog dueling experience</p>
         </div>
 

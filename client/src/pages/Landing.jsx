@@ -35,7 +35,7 @@ export default function Landing({ onPlay }) {
           {/* Logo */}
           <div>
             <h1 className="text-5xl font-black tracking-tight leading-none">
-              <span className="text-ink">Dog</span><span className="text-gradient-primary">gle</span>
+              <span className="text-ink">O</span><span className="text-gradient-primary">doggle</span>
             </h1>
             <p className="text-ink-muted text-sm mt-2">1v1 pet beauty duels — judged by AI</p>
           </div>
