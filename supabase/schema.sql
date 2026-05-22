@@ -14,6 +14,8 @@ CREATE TABLE IF NOT EXISTS public.players (
 );
 
 ALTER TABLE public.players ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Anyone can read players" ON public.players;
+DROP POLICY IF EXISTS "Own row update"          ON public.players;
 CREATE POLICY "Anyone can read players"  ON public.players FOR SELECT  USING (true);
 CREATE POLICY "Own row update"           ON public.players FOR UPDATE  USING (auth.uid() = id);
 
@@ -31,6 +33,7 @@ CREATE TABLE IF NOT EXISTS public.matches (
 );
 
 ALTER TABLE public.matches ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Anyone can read matches" ON public.matches;
 CREATE POLICY "Anyone can read matches"  ON public.matches FOR SELECT  USING (true);
 
 -- Matchmaking queue
@@ -42,6 +45,7 @@ CREATE TABLE IF NOT EXISTS public.queue (
 );
 
 ALTER TABLE public.queue ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Own queue row" ON public.queue;
 CREATE POLICY "Own queue row"  ON public.queue FOR ALL  USING (auth.uid() = player_id);
 
 -- Rooms (active duels)
@@ -67,6 +71,7 @@ CREATE TABLE IF NOT EXISTS public.rooms (
 );
 
 ALTER TABLE public.rooms ENABLE ROW LEVEL SECURITY;
+DROP POLICY IF EXISTS "Room participants can read" ON public.rooms;
 CREATE POLICY "Room participants can read" ON public.rooms FOR SELECT
   USING (auth.uid() = player1_id OR auth.uid() = player2_id);
 
